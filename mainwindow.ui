@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>872</width>
     <height>600</height>
    </rect>
   </property>
@@ -15,33 +15,46 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="2">
-     <widget class="QLabel" name="statusLabel">
-      <property name="text">
-       <string>Status: brak danych</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0">
+     <widget class="QComboBox" name="sensorComboBox"/>
+    </item>
+    <item row="2" column="4">
      <widget class="QPushButton" name="fetchDataButton">
       <property name="text">
        <string>Pobierz dane</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QComboBox" name="sensorComboBox"/>
-    </item>
-    <item row="4" column="0">
+    <item row="5" column="0">
      <widget class="QTextEdit" name="analysisTextEdit"/>
     </item>
     <item row="0" column="0">
+     <widget class="QLabel" name="connectionStatusLabel">
+      <property name="text">
+       <string>Status połączenia</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLineEdit" name="dataAnalysisLineEdit"/>
+    </item>
+    <item row="2" column="0">
      <widget class="QComboBox" name="stationComboBox"/>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="showChartButton">
+    <item row="5" column="4">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="statusLabel">
       <property name="text">
-       <string>Pokaż wykres</string>
+       <string>Status: brak danych</string>
       </property>
      </widget>
     </item>
@@ -52,7 +65,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>872</width>
      <height>22</height>
     </rect>
    </property>

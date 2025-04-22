@@ -5,8 +5,12 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QJsonDocument>
-#include <QJsonArray>
 #include <QJsonObject>
+#include <QJsonArray>
+#include <QFile>
+#include <QDir>
+#include <QStandardPaths>
+#include <QTextStream>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,10 +29,17 @@ public:
 private:
     Ui::MainWindow *ui;
     QNetworkAccessManager *networkManager;
+    void saveDataToFile(const QString &type, const QByteArray &data);
+    QByteArray loadDataFromFile(const QString &type);
+    bool isInternetAvailable();
+    void updateOnlineStatus();
+    void parseStationData(const QByteArray &data);
+    void parseSensorData(const QByteArray &data);
+    void parseMeasurementData(const QByteArray &data);
+    void performDataAnalysis(const QJsonArray &valuesArray);
 
 private slots:
     void on_fetchDataButton_clicked();
-    void on_showChartButton_clicked();
     void onNetworkReplyFinished(QNetworkReply* reply);
     void on_stationComboBox_currentIndexChanged(int index);
     void on_sensorComboBox_currentIndexChanged(int index);
