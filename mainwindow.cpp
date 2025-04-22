@@ -1,5 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QtCharts/QChartView>
+#include <QtCharts/QChart>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+#include <QtCharts/QDateTimeAxis>
+#include <QDateTime>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,6 +13,20 @@ MainWindow::MainWindow(QWidget *parent)
     , networkManager(new QNetworkAccessManager(this))  // <--- dodaj to
 {
     ui->setupUi(this);
+
+    // Tworzymy chartView dynamicznie
+    QChartView *chartView = new QChartView();
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    // Nadajemy nazwę chartView
+    chartView->setObjectName("chartView"); // Nadajemy nazwę dla późniejszego odniesienia
+
+    // Tworzymy wykres
+    QChart *chart = new QChart();
+    chartView->setChart(chart);
+
+    // Ustawiamy chartView na głównym layoucie lub dodajemy go do istniejącego layoutu
+    ui->gridLayout->addWidget(chartView);  // Przykład, jak dodać do layoutu
 
     // Połącz sygnał odpowiedzi z naszym slotem
     connect(networkManager, &QNetworkAccessManager::finished,
@@ -68,10 +88,9 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
         }
 
         QJsonArray stationsArray = jsonDoc.array();
+        QVariant selectedStationId = ui->stationComboBox->currentData();
 
-        QVariant selectedStationId = ui->stationComboBox->currentData(); // zapamiętaj wybraną stację
-
-        ui->stationComboBox->blockSignals(true); // wyłącz sygnały, by nie odpalać currentIndexChanged
+        ui->stationComboBox->blockSignals(true);
         ui->stationComboBox->clear();
 
         for (const QJsonValue &stationValue : stationsArray) {
@@ -81,7 +100,6 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
             ui->stationComboBox->addItem(stationName, stationId);
         }
 
-        // Przywróć wybór, jeśli się da
         for (int i = 0; i < ui->stationComboBox->count(); ++i) {
             if (ui->stationComboBox->itemData(i) == selectedStationId) {
                 ui->stationComboBox->setCurrentIndex(i);
@@ -102,8 +120,7 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
         }
 
         QJsonArray sensorsArray = jsonDoc.array();
-
-        QVariant selectedSensorId = ui->sensorComboBox->currentData(); // zapamiętaj wybrany czujnik
+        QVariant selectedSensorId = ui->sensorComboBox->currentData();
 
         ui->sensorComboBox->blockSignals(true);
         ui->sensorComboBox->clear();
@@ -115,7 +132,6 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
             ui->sensorComboBox->addItem(paramName, sensorId);
         }
 
-        // Przywróć wybór, jeśli się da
         for (int i = 0; i < ui->sensorComboBox->count(); ++i) {
             if (ui->sensorComboBox->itemData(i) == selectedSensorId) {
                 ui->sensorComboBox->setCurrentIndex(i);
@@ -140,15 +156,52 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
 
         QString result = "Pomiar: " + paramName + "\n\n";
 
+        QLineSeries *series = new QLineSeries();
+        series->setName(paramName);
+
         for (const QJsonValue &val : values) {
             QJsonObject valObj = val.toObject();
-            QString date = valObj["date"].toString();
-            QString valueStr = valObj["value"].isNull() ? "brak danych" : QString::number(valObj["value"].toDouble());
-            result += date + ": " + valueStr + "\n";
+            QString dateStr = valObj["date"].toString();
+            QDateTime timestamp = QDateTime::fromString(dateStr, Qt::ISODate);
+            if (!timestamp.isValid()) continue;
+
+            if (!valObj["value"].isNull()) {
+                double value = valObj["value"].toDouble();
+                series->append(timestamp.toMSecsSinceEpoch(), value);
+                result += timestamp.toString("yyyy-MM-dd HH:mm") + ": " + QString::number(value) + "\n";
+            } else {
+                result += timestamp.toString("yyyy-MM-dd HH:mm") + ": brak danych\n";
+            }
         }
 
         ui->analysisTextEdit->setPlainText(result);
         ui->statusLabel->setText("Dane pomiarowe załadowane.");
+
+        // Tworzenie wykresu
+        QChart *chart = new QChart();
+        chart->addSeries(series);
+        chart->setTitle("Wykres pomiarów: " + paramName);
+
+        QDateTimeAxis *axisX = new QDateTimeAxis;
+        axisX->setFormat("dd.MM HH:mm");
+        axisX->setTitleText("Data i czas");
+        chart->addAxis(axisX, Qt::AlignBottom);
+        series->attachAxis(axisX);
+
+        QValueAxis *axisY = new QValueAxis;
+        axisY->setTitleText("Wartość");
+        chart->addAxis(axisY, Qt::AlignLeft);
+        series->attachAxis(axisY);
+
+        // Znajdowanie dynamicznie dodanego chartView po nazwie
+        QChartView *chartView = findChild<QChartView*>("chartView");
+
+        if (chartView) {
+            chartView->setChart(chart);
+            chartView->setRenderHint(QPainter::Antialiasing);
+        } else {
+            ui->statusLabel->setText("Nie znaleziono widoku wykresu.");
+        }
     }
     else {
         ui->statusLabel->setText("Nieznany typ odpowiedzi");

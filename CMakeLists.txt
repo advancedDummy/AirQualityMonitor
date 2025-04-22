@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(AirQualityMonitor LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Gui Widgets Network)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Gui Widgets Network Charts)
 
 qt_standard_project_setup()
 
@@ -14,7 +14,12 @@ qt_add_executable(AirQualityMonitor
 )
 
 target_link_libraries(AirQualityMonitor
-    PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network
+    PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Network
+        Qt6::Charts
 )
 
 include(GNUInstallDirs)
