@@ -37,6 +37,7 @@ private:
     void parseSensorData(const QByteArray &data);
     void parseMeasurementData(const QByteArray &data);
     void performDataAnalysis(const QJsonArray &valuesArray);
+    bool isApiAvailable();
 
 private slots:
     void on_fetchDataButton_clicked();

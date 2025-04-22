@@ -169,6 +169,20 @@ QByteArray MainWindow::loadDataFromFile(const QString &type) {
     return QByteArray();
 }
 
+bool MainWindow::isApiAvailable() {
+    QNetworkRequest request(QUrl("https://api.gios.gov.pl/pjp-api/rest/station/findAll"));
+    QNetworkReply *reply = networkManager->get(request);
+
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    bool success = (reply->error() == QNetworkReply::NoError);
+    reply->deleteLater();
+    return success;
+}
+
+
 bool MainWindow::isInternetAvailable() {
     // Metoda do sprawdzenia dostępności internetu
     QNetworkRequest request(QUrl("http://www.google.com"));
@@ -187,9 +201,16 @@ bool MainWindow::isInternetAvailable() {
 
 void MainWindow::updateOnlineStatus() {
     if (isInternetAvailable()) {
-        ui->connectionStatusLabel->setText("Online");
+        if (isApiAvailable()) {
+            ui->connectionStatusLabel->setText("Online (strona dostępna)");
+            ui->connectionStatusLabel->setStyleSheet("QLabel { color : green; }");
+        } else {
+            ui->connectionStatusLabel->setText("Online (strona niedostępna)");
+            ui->connectionStatusLabel->setStyleSheet("QLabel { color : orange; }");
+        }
     } else {
-        ui->connectionStatusLabel->setText("Offline");
+        ui->connectionStatusLabel->setText("Offline (brak internetu)");
+        ui->connectionStatusLabel->setStyleSheet("QLabel { color : red; }");
     }
 }
 
