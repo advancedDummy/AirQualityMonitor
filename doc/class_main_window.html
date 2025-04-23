@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Air Quality Monitor: Dokumentacja klasy MainWindow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Air Quality Monitor<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Aplikacja do monitorowania jakości powietrza</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-slots">Sloty prywatne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_main_window-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy MainWindow</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentująca główne okno aplikacji.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla MainWindow</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_main_window.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a996c5a2b6f77944776856f08ec30858d" id="r_a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="class_main_window.html" title="Klasa reprezentująca główne okno aplikacji.">MainWindow</a>.  <br /></td></tr>
+<tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7" id="r_ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor klasy <a class="el" href="class_main_window.html" title="Klasa reprezentująca główne okno aplikacji.">MainWindow</a>.  <br /></td></tr>
+<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Sloty prywatne</h2></td></tr>
+<tr class="memitem:abb452375c44c702f96db2d5a41fc2083" id="r_abb452375c44c702f96db2d5a41fc2083"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb452375c44c702f96db2d5a41fc2083">on_fetchDataButton_clicked</a> ()</td></tr>
+<tr class="memdesc:abb452375c44c702f96db2d5a41fc2083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje kliknięcie przycisku "Pobierz dane".  <br /></td></tr>
+<tr class="separator:abb452375c44c702f96db2d5a41fc2083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b6da27e770493781108bd4ea401af0" id="r_a91b6da27e770493781108bd4ea401af0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91b6da27e770493781108bd4ea401af0">onNetworkReplyFinished</a> (QNetworkReply *reply)</td></tr>
+<tr class="memdesc:a91b6da27e770493781108bd4ea401af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje odpowiedź na zapytanie sieciowe.  <br /></td></tr>
+<tr class="separator:a91b6da27e770493781108bd4ea401af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea7a88fb982e5d9cc62be88ce793908" id="r_a0ea7a88fb982e5d9cc62be88ce793908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea7a88fb982e5d9cc62be88ce793908">on_stationComboBox_currentIndexChanged</a> (int index)</td></tr>
+<tr class="memdesc:a0ea7a88fb982e5d9cc62be88ce793908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zmianę wybranej stacji.  <br /></td></tr>
+<tr class="separator:a0ea7a88fb982e5d9cc62be88ce793908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfcd0ea50443dcb3b76d53a9f2679cc3" id="r_adfcd0ea50443dcb3b76d53a9f2679cc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfcd0ea50443dcb3b76d53a9f2679cc3">on_sensorComboBox_currentIndexChanged</a> (int index)</td></tr>
+<tr class="memdesc:adfcd0ea50443dcb3b76d53a9f2679cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zmianę wybranego czujnika.  <br /></td></tr>
+<tr class="separator:adfcd0ea50443dcb3b76d53a9f2679cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:afcdccff2e6c81678940c91008a9bda8e" id="r_afcdccff2e6c81678940c91008a9bda8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcdccff2e6c81678940c91008a9bda8e">saveDataToFile</a> (const QString &amp;type, const QByteArray &amp;data)</td></tr>
+<tr class="memdesc:afcdccff2e6c81678940c91008a9bda8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje dane do pliku JSON.  <br /></td></tr>
+<tr class="separator:afcdccff2e6c81678940c91008a9bda8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e53faca16a8363f1a376372b7c007a" id="r_a86e53faca16a8363f1a376372b7c007a"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86e53faca16a8363f1a376372b7c007a">loadDataFromFile</a> (const QString &amp;type)</td></tr>
+<tr class="memdesc:a86e53faca16a8363f1a376372b7c007a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje dane z pliku JSON.  <br /></td></tr>
+<tr class="separator:a86e53faca16a8363f1a376372b7c007a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0482802568d8c0accce44209bec02c" id="r_aff0482802568d8c0accce44209bec02c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff0482802568d8c0accce44209bec02c">isInternetAvailable</a> ()</td></tr>
+<tr class="memdesc:aff0482802568d8c0accce44209bec02c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza dostępność internetu.  <br /></td></tr>
+<tr class="separator:aff0482802568d8c0accce44209bec02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0be8a762f11caa74455f7d4bd0737a" id="r_a9d0be8a762f11caa74455f7d4bd0737a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d0be8a762f11caa74455f7d4bd0737a">updateOnlineStatus</a> ()</td></tr>
+<tr class="memdesc:a9d0be8a762f11caa74455f7d4bd0737a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje status połączenia w interfejsie użytkownika.  <br /></td></tr>
+<tr class="separator:a9d0be8a762f11caa74455f7d4bd0737a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c68ef09d75f15cb6c0c839981252e8" id="r_ac9c68ef09d75f15cb6c0c839981252e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9c68ef09d75f15cb6c0c839981252e8">parseStationData</a> (const QByteArray &amp;data)</td></tr>
+<tr class="memdesc:ac9c68ef09d75f15cb6c0c839981252e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza dane stacji pomiarowej.  <br /></td></tr>
+<tr class="separator:ac9c68ef09d75f15cb6c0c839981252e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b804bb58437884bc8941fb2134dd28" id="r_a02b804bb58437884bc8941fb2134dd28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02b804bb58437884bc8941fb2134dd28">parseSensorData</a> (const QByteArray &amp;data)</td></tr>
+<tr class="memdesc:a02b804bb58437884bc8941fb2134dd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza dane czujników.  <br /></td></tr>
+<tr class="separator:a02b804bb58437884bc8941fb2134dd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91db5892744e6021bf1b22be13154e7" id="r_ad91db5892744e6021bf1b22be13154e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad91db5892744e6021bf1b22be13154e7">parseMeasurementData</a> (const QByteArray &amp;data)</td></tr>
+<tr class="memdesc:ad91db5892744e6021bf1b22be13154e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza dane pomiarowe.  <br /></td></tr>
+<tr class="separator:ad91db5892744e6021bf1b22be13154e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f3cbbd7d49b6fd4f0400a7d468aa30" id="r_ac5f3cbbd7d49b6fd4f0400a7d468aa30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5f3cbbd7d49b6fd4f0400a7d468aa30">performDataAnalysis</a> (const QJsonArray &amp;valuesArray)</td></tr>
+<tr class="memdesc:ac5f3cbbd7d49b6fd4f0400a7d468aa30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeprowadza analizę danych.  <br /></td></tr>
+<tr class="separator:ac5f3cbbd7d49b6fd4f0400a7d468aa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbcb542b93690ae6333b22c2cb91f73" id="r_a8cbcb542b93690ae6333b22c2cb91f73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cbcb542b93690ae6333b22c2cb91f73">isApiAvailable</a> ()</td></tr>
+<tr class="memdesc:a8cbcb542b93690ae6333b22c2cb91f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza dostępność API GIOŚ.  <br /></td></tr>
+<tr class="separator:a8cbcb542b93690ae6333b22c2cb91f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a35466a70ed47252a0191168126a352a5" id="r_a35466a70ed47252a0191168126a352a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
+<tr class="separator:a35466a70ed47252a0191168126a352a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb27e971bfe26f27b5a1133f0fffbd8" id="r_a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fb27e971bfe26f27b5a1133f0fffbd8">networkManager</a></td></tr>
+<tr class="separator:a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa reprezentująca główne okno aplikacji. </p>
+<p>Klasa <a class="el" href="class_main_window.html" title="Klasa reprezentująca główne okno aplikacji.">MainWindow</a> zawiera wszystkie elementy interfejsu użytkownika oraz logikę aplikacji, w tym połączenia z API GIOŚ, pobieranie danych o stacjach pomiarowych i czujnikach, a także wyświetlanie wyników na wykresach. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::MainWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor klasy <a class="el" href="class_main_window.html" title="Klasa reprezentująca główne okno aplikacji.">MainWindow</a>. </p>
+<p>Inicjalizuje interfejs użytkownika oraz menedżer sieciowy do obsługi zapytań HTTP.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Opcjonalny wskaźnik do rodzica (domyślnie nullptr).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inicjalizuje interfejs użytkownika oraz konfiguracje związane z menedżerem sieciowym. Tworzy wykres, ustawia antyaliasing oraz dodaje go do layoutu.</p>
+<ul>
+<li><code>statusLabel</code>: Pokazuje status działania aplikacji.</li>
+<li><code>connectionStatusLabel</code>: Informuje o połączeniu z internetem/API.</li>
+<li><code>fetchDataButton</code>: Inicjuje pobieranie danych.</li>
+<li><code>stationComboBox</code> / <code>sensorComboBox</code>: Wybór lokalizacji i sensora.</li>
+<li><code>analysisTextEdit</code>: Pokazuje analizę danych w formie tekstowej.</li>
+<li><code>dataAnalysisLineEdit</code>: Może wyświetlać pojedynczą wartość analizy. <dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Wskaźnik do rodzica okna głównego </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="ae98d00a93bc118200eeef9f9bba1dba7" name="ae98d00a93bc118200eeef9f9bba1dba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98d00a93bc118200eeef9f9bba1dba7">&#9670;&#160;</a></span>~MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::~MainWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor klasy <a class="el" href="class_main_window.html" title="Klasa reprezentująca główne okno aplikacji.">MainWindow</a>. </p>
+<p>Zwolnienie zasobów przy zamknięciu okna aplikacji.</p>
+<p>Zwalnia zasoby związane z interfejsem użytkownika. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a8cbcb542b93690ae6333b22c2cb91f73" name="a8cbcb542b93690ae6333b22c2cb91f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbcb542b93690ae6333b22c2cb91f73">&#9670;&#160;</a></span>isApiAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::isApiAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza dostępność API GIOŚ. </p>
+<p>Wysyła zapytanie HTTP do API GIOŚ, aby sprawdzić, czy jest ono dostępne.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli API GIOŚ jest dostępne, w przeciwnym razie false.</dd></dl>
+<p>Funkcja wykonuje zapytanie do API GIOŚ, aby sprawdzić, czy odpowiedź na zapytanie jest poprawna, co oznacza dostępność serwera API. Zwraca wartość typu bool, która wskazuje, czy API jest dostępne.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli API jest dostępne (brak błędów w odpowiedzi), w przeciwnym przypadku false. </dd></dl>
+
+</div>
+</div>
+<a id="aff0482802568d8c0accce44209bec02c" name="aff0482802568d8c0accce44209bec02c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0482802568d8c0accce44209bec02c">&#9670;&#160;</a></span>isInternetAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::isInternetAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza dostępność internetu. </p>
+<p>Sprawdza dostępność połączenia internetowego.</p>
+<p>Wysyła zapytanie HTTP do serwera Google, aby sprawdzić, czy połączenie internetowe jest dostępne.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli internet jest dostępny, w przeciwnym razie false.</dd></dl>
+<p>Funkcja wysyła zapytanie do serwisu Google, aby sprawdzić, czy urządzenie ma dostęp do internetu. Czekając na odpowiedź z serwera, sprawdza, czy wystąpił błąd w odpowiedzi. Zwraca wartość typu bool, która wskazuje, czy połączenie internetowe jest dostępne.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli internet jest dostępny (brak błędów w odpowiedzi), w przeciwnym przypadku false. </dd></dl>
+
+</div>
+</div>
+<a id="a86e53faca16a8363f1a376372b7c007a" name="a86e53faca16a8363f1a376372b7c007a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e53faca16a8363f1a376372b7c007a">&#9670;&#160;</a></span>loadDataFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray MainWindow::loadDataFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wczytuje dane z pliku JSON. </p>
+<p>Odczytuje dane z pliku JSON.</p>
+<p>Odczytuje dane z pliku o podanej nazwie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Typ danych do załadowania (np. "stations", "measurements"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Wczytane dane w formacie QByteArray.</dd></dl>
+<p>Odczytuje dane z pliku JSON i zwraca je jako QByteArray.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Typ danych do odczytania (np. "stations", "measurements") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>QByteArray Zawartość pliku </dd></dl>
+
+</div>
+</div>
+<a id="abb452375c44c702f96db2d5a41fc2083" name="abb452375c44c702f96db2d5a41fc2083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb452375c44c702f96db2d5a41fc2083">&#9670;&#160;</a></span>on_fetchDataButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_fetchDataButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje kliknięcie przycisku "Pobierz dane". </p>
+<p>Wywołuje zapytania sieciowe w celu pobrania danych o stacjach i czujnikach.</p>
+<p>Sprawdza dostępność internetu i API GIOŚ. W zależności od dostępności pobiera dane z sieci lub z plików lokalnych. </p>
+
+</div>
+</div>
+<a id="adfcd0ea50443dcb3b76d53a9f2679cc3" name="adfcd0ea50443dcb3b76d53a9f2679cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfcd0ea50443dcb3b76d53a9f2679cc3">&#9670;&#160;</a></span>on_sensorComboBox_currentIndexChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_sensorComboBox_currentIndexChanged </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zmianę wybranego czujnika. </p>
+<p>Zmienia wybranego czujnika i pobiera dane pomiarowe.</p>
+<p>Pobiera dane pomiarowe dla wybranego czujnika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Indeks wybranego czujnika.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przy zmianie wybranego czujnika pobiera dane pomiarowe z internetu lub z plików lokalnych, w zależności od dostępności połączenia internetowego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Indeks wybranego czujnika </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ea7a88fb982e5d9cc62be88ce793908" name="a0ea7a88fb982e5d9cc62be88ce793908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea7a88fb982e5d9cc62be88ce793908">&#9670;&#160;</a></span>on_stationComboBox_currentIndexChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_stationComboBox_currentIndexChanged </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zmianę wybranej stacji. </p>
+<p>Zmienia wybraną stację i pobiera dane czujników.</p>
+<p>Pobiera dane czujników dla wybranej stacji.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Indeks wybranej stacji.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przy zmianie wybranej stacji pobiera dane czujników stacji z internetu lub z plików lokalnych, jeżeli tryb offline jest aktywowany.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Indeks wybranej stacji </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a91b6da27e770493781108bd4ea401af0" name="a91b6da27e770493781108bd4ea401af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b6da27e770493781108bd4ea401af0">&#9670;&#160;</a></span>onNetworkReplyFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onNetworkReplyFinished </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *</td>          <td class="paramname"><span class="paramname"><em>reply</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje odpowiedź na zapytanie sieciowe. </p>
+<p>Obsługuje odpowiedź z zapytania sieciowego.</p>
+<p>Przetwarza odpowiedź sieciową i aktualizuje dane w interfejsie użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reply</td><td>Odpowiedź z serwera.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Przetwarza odpowiedź na podstawie typu zapytania (stacje, czujniki, pomiary), zapisuje dane do plików lokalnych i wywołuje odpowiednią funkcję do analizy danych.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reply</td><td>Odpowiedź na zapytanie sieciowe </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad91db5892744e6021bf1b22be13154e7" name="ad91db5892744e6021bf1b22be13154e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad91db5892744e6021bf1b22be13154e7">&#9670;&#160;</a></span>parseMeasurementData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::parseMeasurementData </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przetwarza dane pomiarowe. </p>
+<p>Parsuje dane pomiarowe i wyświetla je na wykresie oraz w analizie tekstowej.</p>
+<p>Analizuje dane pomiarowe w formacie JSON i wyświetla je na wykresie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane pomiarowe w formacie QByteArray.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funkcja odbiera dane pomiarowe w formacie JSON, konwertuje je na odpowiednie obiekty i rysuje wykres na podstawie wartości pomiarów. Ponadto generuje analizę tekstową wyników, którą wyświetla w oknie aplikacji.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane pomiarowe w formacie JSON. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02b804bb58437884bc8941fb2134dd28" name="a02b804bb58437884bc8941fb2134dd28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b804bb58437884bc8941fb2134dd28">&#9670;&#160;</a></span>parseSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::parseSensorData </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przetwarza dane czujników. </p>
+<p>Parsuje dane czujników i dodaje je do ComboBox'a.</p>
+<p>Analizuje dane czujników w formacie JSON i aktualizuje interfejs użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane czujników w formacie QByteArray.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funkcja przetwarza dane czujników w formacie JSON, wydobywa nazwę parametru i dodaje je do listy w ComboBoxie, przypisując odpowiednie identyfikatory czujników jako dane powiązane z elementami listy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane czujników w formacie JSON. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9c68ef09d75f15cb6c0c839981252e8" name="ac9c68ef09d75f15cb6c0c839981252e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c68ef09d75f15cb6c0c839981252e8">&#9670;&#160;</a></span>parseStationData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::parseStationData </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przetwarza dane stacji pomiarowej. </p>
+<p>Parsuje dane stacji i dodaje je do ComboBox'a.</p>
+<p>Analizuje dane stacji pomiarowej w formacie JSON i aktualizuje interfejs użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane stacji w formacie QByteArray.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funkcja odbiera dane w formacie JSON, konwertuje je na tablicę, a następnie dodaje nazwy stacji do listy w ComboBoxie, przypisując jednocześnie ich identyfikatory jako dane powiązane z elementami listy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane stacji w formacie JSON. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac5f3cbbd7d49b6fd4f0400a7d468aa30" name="ac5f3cbbd7d49b6fd4f0400a7d468aa30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5f3cbbd7d49b6fd4f0400a7d468aa30">&#9670;&#160;</a></span>performDataAnalysis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::performDataAnalysis </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonArray &amp;</td>          <td class="paramname"><span class="paramname"><em>valuesArray</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przeprowadza analizę danych. </p>
+<p>Wykonuje analizę danych pomiarowych (maksimum, minimum, średnia, trend).</p>
+<p>Analizuje dane pomiarowe z formatu JSON i wyświetla wyniki analizy w interfejsie użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valuesArray</td><td>Tablica danych pomiarowych w formacie QJsonArray.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funkcja przetwarza dane pomiarowe, oblicza minimalną, maksymalną wartość, średnią oraz wykrywa trend w danych (wzrostowy/spadkowy). Wyniki są wyświetlane w interfejsie użytkownika.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valuesArray</td><td>Tablica wartości pomiarowych do analizy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afcdccff2e6c81678940c91008a9bda8e" name="afcdccff2e6c81678940c91008a9bda8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdccff2e6c81678940c91008a9bda8e">&#9670;&#160;</a></span>saveDataToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::saveDataToFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zapisuje dane do pliku JSON. </p>
+<p>Zapisuje dane do pliku w bieżącym katalogu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Typ danych (np. "stations", "measurements"). </td></tr>
+    <tr><td class="paramname">data</td><td>Dane do zapisania.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Zapisuje dane w formacie JSON do pliku w bieżącym katalogu.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Typ danych (np. "stations", "measurements") </td></tr>
+    <tr><td class="paramname">data</td><td>Dane do zapisania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d0be8a762f11caa74455f7d4bd0737a" name="a9d0be8a762f11caa74455f7d4bd0737a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0be8a762f11caa74455f7d4bd0737a">&#9670;&#160;</a></span>updateOnlineStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateOnlineStatus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje status połączenia w interfejsie użytkownika. </p>
+<p>Zmienia tekst etykiety statusu połączenia w zależności od dostępności internetu i API.</p>
+<p>Funkcja sprawdza dostępność internetu i dostępność API GIOŚ. Na podstawie tych informacji aktualizuje tekst i kolor etykiety statusu połączenia w interfejsie użytkownika. Etykieta zmienia kolor na zielony, pomarańczowy lub czerwony w zależności od stanu połączenia. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a0fb27e971bfe26f27b5a1133f0fffbd8" name="a0fb27e971bfe26f27b5a1133f0fffbd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb27e971bfe26f27b5a1133f0fffbd8">&#9670;&#160;</a></span>networkManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager* MainWindow::networkManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Menedżer sieciowy do obsługi zapytań HTTP </p>
+
+</div>
+</div>
+<a id="a35466a70ed47252a0191168126a352a5" name="a35466a70ed47252a0191168126a352a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35466a70ed47252a0191168126a352a5">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ui_1_1_main_window.html">Ui::MainWindow</a>* MainWindow::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Wskaźnik do interfejsu użytkownika </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/mtlc2/Documents/AirQualityMonitor/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>C:/Users/mtlc2/Documents/AirQualityMonitor/<a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano za pomocą&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

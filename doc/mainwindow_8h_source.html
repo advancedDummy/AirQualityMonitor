@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Air Quality Monitor: Plik źródłowy C:/Users/mtlc2/Documents/AirQualityMonitor/mainwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Air Quality Monitor<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Aplikacja do monitorowania jakości powietrza</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_7814ad358c29d875d6f86812895c9c39.html">mtlc2</a></li><li class="navelem"><a class="el" href="dir_35181205b84b6f73d4382e7e8dce29bb.html">Documents</a></li><li class="navelem"><a class="el" href="dir_d46392d8a22c3beb9ab6aab87888c97f.html">AirQualityMonitor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">mainwindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="mainwindow_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QNetworkAccessManager&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;QNetworkReply&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QJsonDocument&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;QJsonObject&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;QJsonArray&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;QStandardPaths&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>QT_BEGIN_NAMESPACE</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span><a class="code hl_class" href="class_ui_1_1_main_window.html">MainWindow</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>QT_END_NAMESPACE</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_main_window.html">   48</a></span><span class="keyword">class </span><a class="code hl_function" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Q_OBJECT</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">   70</a></span>    <a class="code hl_class" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *<a class="code hl_variable" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>; </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_main_window.html#a0fb27e971bfe26f27b5a1133f0fffbd8">   71</a></span>    QNetworkAccessManager *<a class="code hl_variable" href="class_main_window.html#a0fb27e971bfe26f27b5a1133f0fffbd8">networkManager</a>; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#afcdccff2e6c81678940c91008a9bda8e">saveDataToFile</a>(<span class="keyword">const</span> QString &amp;type, <span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    QByteArray <a class="code hl_function" href="class_main_window.html#a86e53faca16a8363f1a376372b7c007a">loadDataFromFile</a>(<span class="keyword">const</span> QString &amp;type);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_main_window.html#aff0482802568d8c0accce44209bec02c">isInternetAvailable</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a9d0be8a762f11caa74455f7d4bd0737a">updateOnlineStatus</a>();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ac9c68ef09d75f15cb6c0c839981252e8">parseStationData</a>(<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a02b804bb58437884bc8941fb2134dd28">parseSensorData</a>(<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ad91db5892744e6021bf1b22be13154e7">parseMeasurementData</a>(<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ac5f3cbbd7d49b6fd4f0400a7d468aa30">performDataAnalysis</a>(<span class="keyword">const</span> QJsonArray &amp;valuesArray);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_main_window.html#a8cbcb542b93690ae6333b22c2cb91f73">isApiAvailable</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#abb452375c44c702f96db2d5a41fc2083">on_fetchDataButton_clicked</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a91b6da27e770493781108bd4ea401af0">onNetworkReplyFinished</a>(QNetworkReply* reply);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0ea7a88fb982e5d9cc62be88ce793908">on_stationComboBox_currentIndexChanged</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#adfcd0ea50443dcb3b76d53a9f2679cc3">on_sensorComboBox_currentIndexChanged</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>};</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="aclass_main_window_html_a02b804bb58437884bc8941fb2134dd28"><div class="ttname"><a href="class_main_window.html#a02b804bb58437884bc8941fb2134dd28">MainWindow::parseSensorData</a></div><div class="ttdeci">void parseSensorData(const QByteArray &amp;data)</div><div class="ttdoc">Przetwarza dane czujników.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:358</div></div>
+<div class="ttc" id="aclass_main_window_html_a0ea7a88fb982e5d9cc62be88ce793908"><div class="ttname"><a href="class_main_window.html#a0ea7a88fb982e5d9cc62be88ce793908">MainWindow::on_stationComboBox_currentIndexChanged</a></div><div class="ttdeci">void on_stationComboBox_currentIndexChanged(int index)</div><div class="ttdoc">Obsługuje zmianę wybranej stacji.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:155</div></div>
+<div class="ttc" id="aclass_main_window_html_a0fb27e971bfe26f27b5a1133f0fffbd8"><div class="ttname"><a href="class_main_window.html#a0fb27e971bfe26f27b5a1133f0fffbd8">MainWindow::networkManager</a></div><div class="ttdeci">QNetworkAccessManager * networkManager</div><div class="ttdef"><b>Definicja</b> mainwindow.h:71</div></div>
+<div class="ttc" id="aclass_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdef"><b>Definicja</b> mainwindow.h:70</div></div>
+<div class="ttc" id="aclass_main_window_html_a86e53faca16a8363f1a376372b7c007a"><div class="ttname"><a href="class_main_window.html#a86e53faca16a8363f1a376372b7c007a">MainWindow::loadDataFromFile</a></div><div class="ttdeci">QByteArray loadDataFromFile(const QString &amp;type)</div><div class="ttdoc">Wczytuje dane z pliku JSON.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:241</div></div>
+<div class="ttc" id="aclass_main_window_html_a8cbcb542b93690ae6333b22c2cb91f73"><div class="ttname"><a href="class_main_window.html#a8cbcb542b93690ae6333b22c2cb91f73">MainWindow::isApiAvailable</a></div><div class="ttdeci">bool isApiAvailable()</div><div class="ttdoc">Sprawdza dostępność API GIOŚ.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:261</div></div>
+<div class="ttc" id="aclass_main_window_html_a91b6da27e770493781108bd4ea401af0"><div class="ttname"><a href="class_main_window.html#a91b6da27e770493781108bd4ea401af0">MainWindow::onNetworkReplyFinished</a></div><div class="ttdeci">void onNetworkReplyFinished(QNetworkReply *reply)</div><div class="ttdoc">Obsługuje odpowiedź na zapytanie sieciowe.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:126</div></div>
+<div class="ttc" id="aclass_main_window_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor klasy MainWindow.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:38</div></div>
+<div class="ttc" id="aclass_main_window_html_a9d0be8a762f11caa74455f7d4bd0737a"><div class="ttname"><a href="class_main_window.html#a9d0be8a762f11caa74455f7d4bd0737a">MainWindow::updateOnlineStatus</a></div><div class="ttdeci">void updateOnlineStatus()</div><div class="ttdoc">Aktualizuje status połączenia w interfejsie użytkownika.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:306</div></div>
+<div class="ttc" id="aclass_main_window_html_abb452375c44c702f96db2d5a41fc2083"><div class="ttname"><a href="class_main_window.html#abb452375c44c702f96db2d5a41fc2083">MainWindow::on_fetchDataButton_clicked</a></div><div class="ttdeci">void on_fetchDataButton_clicked()</div><div class="ttdoc">Obsługuje kliknięcie przycisku &quot;Pobierz dane&quot;.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:83</div></div>
+<div class="ttc" id="aclass_main_window_html_ac5f3cbbd7d49b6fd4f0400a7d468aa30"><div class="ttname"><a href="class_main_window.html#ac5f3cbbd7d49b6fd4f0400a7d468aa30">MainWindow::performDataAnalysis</a></div><div class="ttdeci">void performDataAnalysis(const QJsonArray &amp;valuesArray)</div><div class="ttdoc">Przeprowadza analizę danych.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:453</div></div>
+<div class="ttc" id="aclass_main_window_html_ac9c68ef09d75f15cb6c0c839981252e8"><div class="ttname"><a href="class_main_window.html#ac9c68ef09d75f15cb6c0c839981252e8">MainWindow::parseStationData</a></div><div class="ttdeci">void parseStationData(const QByteArray &amp;data)</div><div class="ttdoc">Przetwarza dane stacji pomiarowej.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:330</div></div>
+<div class="ttc" id="aclass_main_window_html_ad91db5892744e6021bf1b22be13154e7"><div class="ttname"><a href="class_main_window.html#ad91db5892744e6021bf1b22be13154e7">MainWindow::parseMeasurementData</a></div><div class="ttdeci">void parseMeasurementData(const QByteArray &amp;data)</div><div class="ttdoc">Przetwarza dane pomiarowe.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:382</div></div>
+<div class="ttc" id="aclass_main_window_html_adfcd0ea50443dcb3b76d53a9f2679cc3"><div class="ttname"><a href="class_main_window.html#adfcd0ea50443dcb3b76d53a9f2679cc3">MainWindow::on_sensorComboBox_currentIndexChanged</a></div><div class="ttdeci">void on_sensorComboBox_currentIndexChanged(int index)</div><div class="ttdoc">Obsługuje zmianę wybranego czujnika.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:185</div></div>
+<div class="ttc" id="aclass_main_window_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Destruktor klasy MainWindow.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:73</div></div>
+<div class="ttc" id="aclass_main_window_html_afcdccff2e6c81678940c91008a9bda8e"><div class="ttname"><a href="class_main_window.html#afcdccff2e6c81678940c91008a9bda8e">MainWindow::saveDataToFile</a></div><div class="ttdeci">void saveDataToFile(const QString &amp;type, const QByteArray &amp;data)</div><div class="ttdoc">Zapisuje dane do pliku JSON.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:221</div></div>
+<div class="ttc" id="aclass_main_window_html_aff0482802568d8c0accce44209bec02c"><div class="ttname"><a href="class_main_window.html#aff0482802568d8c0accce44209bec02c">MainWindow::isInternetAvailable</a></div><div class="ttdeci">bool isInternetAvailable()</div><div class="ttdoc">Sprawdza dostępność internetu.</div><div class="ttdef"><b>Definicja</b> mainwindow.cpp:283</div></div>
+<div class="ttc" id="aclass_ui_1_1_main_window_html"><div class="ttname"><a href="class_ui_1_1_main_window.html">Ui::MainWindow</a></div><div class="ttdef"><b>Definicja</b> ui_mainwindow.h:123</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definicja</b> ui_mainwindow.h:122</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano za pomocą&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

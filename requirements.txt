@@ -1,0 +1,33 @@
+# requirements.txt – Air Quality Monitor (Qt C++)
+
+## Środowisko programistyczne:
+- Qt 6.x (Qt Creator i Qt Design Studio)  
+  https://www.qt.io/download  
+  * Zalecany komponent: Desktop Qt 6.x MinGW / MSVC lub GCC (w zależności od systemu)
+
+## Biblioteki Qt używane w projekcie:
+- Qt Core
+- Qt GUI
+- Qt Widgets
+- Qt Network
+- Qt Charts
+- Qt JSON (część Qt Core)
+
+## Narzędzia:
+- Kompilator C++ (np. MinGW lub MSVC)
+
+## Zewnętrzne pliki wymagane do działania aplikacji:
+- Pliki cache JSON zapisane lokalnie (dla trybu offline):
+  - `stations.json`
+  - `sensors_<station_id>.json`
+  - `data_<sensor_id>.json`
+
+  * Są generowane automatycznie podczas działania programu w trybie online.
+
+## Wymagane połączenie:
+- Połączenie z publicznym API GIOŚ:
+  https://api.gios.gov.pl/pjp-api/rest/
+
+## Uwagi:
+- Aplikacja nie wymaga instalacji zewnętrznych bibliotek innych niż standardowe moduły Qt.
+- Obsługa trybu offline wymaga wcześniejszego uruchomienia aplikacji online (w celu pobrania i zapisania danych).
