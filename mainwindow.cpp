@@ -1,3 +1,17 @@
+/**
+ * @file mainwindow.cpp
+ * @brief Definicje metod klasy MainWindow.
+ *
+ * Ten plik zawiera implementację głównego okna aplikacji monitorującej jakość powietrza
+ * z wykorzystaniem danych z API GIOŚ. Zawiera funkcje odpowiedzialne za:
+ * - interakcję z użytkownikiem,
+ * - komunikację sieciową (tryb online i offline),
+ * - przetwarzanie oraz wizualizację danych pomiarowych.
+ *
+ * @author Miłosz Wybrański
+ * @date 22.04.2025
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QtCharts/QChartView>
@@ -7,51 +21,76 @@
 #include <QtCharts/QDateTimeAxis>
 #include <QDateTime>
 
+/**
+ * @brief Konstruktor klasy MainWindow
+ *
+ * Inicjalizuje interfejs użytkownika oraz konfiguracje związane z menedżerem sieciowym.
+ * Tworzy wykres, ustawia antyaliasing oraz dodaje go do layoutu.
+ *
+ * - `statusLabel`: Pokazuje status działania aplikacji.
+ * - `connectionStatusLabel`: Informuje o połączeniu z internetem/API.
+ * - `fetchDataButton`: Inicjuje pobieranie danych.
+ * - `stationComboBox` / `sensorComboBox`: Wybór lokalizacji i sensora.
+ * - `analysisTextEdit`: Pokazuje analizę danych w formie tekstowej.
+ * - `dataAnalysisLineEdit`: Może wyświetlać pojedynczą wartość analizy.
+ * @param parent Wskaźnik do rodzica okna głównego
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , networkManager(new QNetworkAccessManager(this))
+    , networkManager(new QNetworkAccessManager(this)) // Inicjalizacja menedżera sieciowego
 {
     ui->setupUi(this);
 
-    // chartView dynamicznie
+    // Tworzenie obiektu wykresu i przypisanie antyaliasingu
     QChartView *chartView = new QChartView();
     chartView->setRenderHint(QPainter::Antialiasing);
 
-    // Nadajemy nazwę chartView
+    // Nadanie obiektowi wykresu unikalnej nazwy
     chartView->setObjectName("chartView");
 
-    // Tworzymy wykres
+    // Tworzenie wykresu i przypisanie go do chartView
     QChart *chart = new QChart();
     chartView->setChart(chart);
 
-    // Dodajemy wykres go do istniejącego layoutu
+    // Dodanie wykresu do layoutu w interfejsie
     ui->gridLayout->addWidget(chartView);
 
-    // Połącz sygnał odpowiedzi ze slotem
+    // Połączenie sygnału zakończenia zapytania sieciowego z odpowiednim slotem
     connect(networkManager, &QNetworkAccessManager::finished,
             this, &MainWindow::onNetworkReplyFinished);
 
+    // Połączenie zmiany wybranego czujnika z odpowiednim slotem
     connect(ui->sensorComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::on_sensorComboBox_currentIndexChanged);
 }
 
+/**
+ * @brief Destruktor klasy MainWindow
+ *
+ * Zwalnia zasoby związane z interfejsem użytkownika.
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/**
+ * @brief Obsługuje kliknięcie przycisku "Pobierz dane"
+ *
+ * Sprawdza dostępność internetu i API GIOŚ. W zależności od dostępności pobiera dane z sieci lub z plików lokalnych.
+ */
 void MainWindow::on_fetchDataButton_clicked() {
     updateOnlineStatus();
 
     if (isInternetAvailable()) {
-        // Pobieranie stacji
+        // Pobieranie listy stacji
         QUrl url("https://api.gios.gov.pl/pjp-api/rest/station/findAll");
         QNetworkRequest request(url);
         request.setAttribute(QNetworkRequest::User, "stations");
         networkManager->get(request);
 
-        // Pobieranie danych pomiarowych
+        // Pobieranie danych z wybranego czujnika
         int sensorId = ui->sensorComboBox->currentData().toInt();
         if (sensorId != 0) {
             QUrl url1("https://api.gios.gov.pl/pjp-api/rest/data/getData/" + QString::number(sensorId));
@@ -60,7 +99,7 @@ void MainWindow::on_fetchDataButton_clicked() {
             networkManager->get(request1);
         }
     } else {
-        // Tryb offline – ładowanie z pliku
+        // Tryb offline – odczyt danych z plików lokalnych
         QByteArray data = loadDataFromFile("stations");
         if (!data.isEmpty()) {
             parseStationData(data);
@@ -76,10 +115,19 @@ void MainWindow::on_fetchDataButton_clicked() {
     }
 }
 
+/**
+ * @brief Obsługuje odpowiedź z zapytania sieciowego
+ *
+ * Przetwarza odpowiedź na podstawie typu zapytania (stacje, czujniki, pomiary),
+ * zapisuje dane do plików lokalnych i wywołuje odpowiednią funkcję do analizy danych.
+ *
+ * @param reply Odpowiedź na zapytanie sieciowe
+ */
 void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
     QByteArray responseData = reply->readAll();
     QString requestType = reply->request().attribute(QNetworkRequest::User).toString();
 
+    // Przetwarzanie odpowiedzi w zależności od typu zapytania
     if (requestType == "stations") {
         parseStationData(responseData);
         saveDataToFile("stations", responseData);
@@ -93,10 +141,17 @@ void MainWindow::onNetworkReplyFinished(QNetworkReply *reply) {
         saveDataToFile("measurements_" + QString::number(sensorId), responseData);
     }
 
-    reply->deleteLater();
+    reply->deleteLater(); // Zwolnienie pamięci
 }
 
-
+/**
+ * @brief Zmienia wybraną stację i pobiera dane czujników
+ *
+ * Przy zmianie wybranej stacji pobiera dane czujników stacji z internetu lub z plików lokalnych,
+ * jeżeli tryb offline jest aktywowany.
+ *
+ * @param index Indeks wybranej stacji
+ */
 void MainWindow::on_stationComboBox_currentIndexChanged(int index) {
     if (index < 0) return;
 
@@ -119,7 +174,14 @@ void MainWindow::on_stationComboBox_currentIndexChanged(int index) {
     }
 }
 
-
+/**
+ * @brief Zmienia wybranego czujnika i pobiera dane pomiarowe
+ *
+ * Przy zmianie wybranego czujnika pobiera dane pomiarowe z internetu lub z plików lokalnych,
+ * w zależności od dostępności połączenia internetowego.
+ *
+ * @param index Indeks wybranego czujnika
+ */
 void MainWindow::on_sensorComboBox_currentIndexChanged(int index) {
     if (index < 0) return;
 
@@ -138,6 +200,8 @@ void MainWindow::on_sensorComboBox_currentIndexChanged(int index) {
         } else {
             ui->statusLabel->setText("Brak zapisanych danych pomiarowych dla czujnika.");
             ui->analysisTextEdit->setPlainText("");
+
+            // Czyszczenie wykresu, jeśli dane są niedostępne
             QChartView *chartView = findChild<QChartView*>("chartView");
             if (chartView) {
                 chartView->setChart(new QChart()); // czyści wykres
@@ -146,6 +210,14 @@ void MainWindow::on_sensorComboBox_currentIndexChanged(int index) {
     }
 }
 
+/**
+ * @brief Zapisuje dane do pliku JSON
+ *
+ * Zapisuje dane w formacie JSON do pliku w bieżącym katalogu.
+ *
+ * @param type Typ danych (np. "stations", "measurements")
+ * @param data Dane do zapisania
+ */
 void MainWindow::saveDataToFile(const QString &type, const QByteArray &data) {
     QString filename = QDir::currentPath() + "/" + type + ".json";
     QFile file(filename);
@@ -158,6 +230,14 @@ void MainWindow::saveDataToFile(const QString &type, const QByteArray &data) {
     }
 }
 
+/**
+ * @brief Odczytuje dane z pliku JSON
+ *
+ * Odczytuje dane z pliku JSON i zwraca je jako QByteArray.
+ *
+ * @param type Typ danych do odczytania (np. "stations", "measurements")
+ * @return QByteArray Zawartość pliku
+ */
 QByteArray MainWindow::loadDataFromFile(const QString &type) {
     QString filename = QDir::currentPath() + "/" + type + ".json";
     QFile file(filename);
@@ -169,6 +249,15 @@ QByteArray MainWindow::loadDataFromFile(const QString &type) {
     return QByteArray();
 }
 
+/**
+ * @brief Sprawdza dostępność API GIOŚ.
+ *
+ * Funkcja wykonuje zapytanie do API GIOŚ, aby sprawdzić, czy odpowiedź na zapytanie
+ * jest poprawna, co oznacza dostępność serwera API. Zwraca wartość typu bool, która
+ * wskazuje, czy API jest dostępne.
+ *
+ * @return true, jeśli API jest dostępne (brak błędów w odpowiedzi), w przeciwnym przypadku false.
+ */
 bool MainWindow::isApiAvailable() {
     QNetworkRequest request(QUrl("https://api.gios.gov.pl/pjp-api/rest/station/findAll"));
     QNetworkReply *reply = networkManager->get(request);
@@ -182,7 +271,15 @@ bool MainWindow::isApiAvailable() {
     return success;
 }
 
-
+/**
+ * @brief Sprawdza dostępność połączenia internetowego.
+ *
+ * Funkcja wysyła zapytanie do serwisu Google, aby sprawdzić, czy urządzenie ma dostęp
+ * do internetu. Czekając na odpowiedź z serwera, sprawdza, czy wystąpił błąd w odpowiedzi.
+ * Zwraca wartość typu bool, która wskazuje, czy połączenie internetowe jest dostępne.
+ *
+ * @return true, jeśli internet jest dostępny (brak błędów w odpowiedzi), w przeciwnym przypadku false.
+ */
 bool MainWindow::isInternetAvailable() {
     // Metoda do sprawdzenia dostępności internetu
     QNetworkRequest request(QUrl("http://www.google.com"));
@@ -199,6 +296,13 @@ bool MainWindow::isInternetAvailable() {
     }
 }
 
+/**
+ * @brief Aktualizuje status połączenia w interfejsie użytkownika.
+ *
+ * Funkcja sprawdza dostępność internetu i dostępność API GIOŚ. Na podstawie tych
+ * informacji aktualizuje tekst i kolor etykiety statusu połączenia w interfejsie użytkownika.
+ * Etykieta zmienia kolor na zielony, pomarańczowy lub czerwony w zależności od stanu połączenia.
+ */
 void MainWindow::updateOnlineStatus() {
     if (isInternetAvailable()) {
         if (isApiAvailable()) {
@@ -214,6 +318,15 @@ void MainWindow::updateOnlineStatus() {
     }
 }
 
+/**
+ * @brief Parsuje dane stacji i dodaje je do ComboBox'a.
+ *
+ * Funkcja odbiera dane w formacie JSON, konwertuje je na tablicę, a następnie
+ * dodaje nazwy stacji do listy w ComboBoxie, przypisując jednocześnie ich identyfikatory
+ * jako dane powiązane z elementami listy.
+ *
+ * @param data Dane stacji w formacie JSON.
+ */
 void MainWindow::parseStationData(const QByteArray &data) {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     if (!doc.isArray()) return;
@@ -233,6 +346,15 @@ void MainWindow::parseStationData(const QByteArray &data) {
 
 }
 
+/**
+ * @brief Parsuje dane czujników i dodaje je do ComboBox'a.
+ *
+ * Funkcja przetwarza dane czujników w formacie JSON, wydobywa nazwę parametru
+ * i dodaje je do listy w ComboBoxie, przypisując odpowiednie identyfikatory
+ * czujników jako dane powiązane z elementami listy.
+ *
+ * @param data Dane czujników w formacie JSON.
+ */
 void MainWindow::parseSensorData(const QByteArray &data) {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     if (!doc.isArray()) return;
@@ -248,6 +370,15 @@ void MainWindow::parseSensorData(const QByteArray &data) {
     }
 }
 
+/**
+ * @brief Parsuje dane pomiarowe i wyświetla je na wykresie oraz w analizie tekstowej.
+ *
+ * Funkcja odbiera dane pomiarowe w formacie JSON, konwertuje je na odpowiednie
+ * obiekty i rysuje wykres na podstawie wartości pomiarów. Ponadto generuje
+ * analizę tekstową wyników, którą wyświetla w oknie aplikacji.
+ *
+ * @param data Dane pomiarowe w formacie JSON.
+ */
 void MainWindow::parseMeasurementData(const QByteArray &data) {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     if (!doc.isObject()) return;
@@ -272,7 +403,7 @@ void MainWindow::parseMeasurementData(const QByteArray &data) {
             QDateTime timestamp = QDateTime::fromString(dateStr, Qt::ISODate);
             series->append(timestamp.toMSecsSinceEpoch(), value);
 
-            // Linię tekstową z datą i wartością
+            // Linia tekstowa z datą i wartością
             analysisTextList.append(timestamp.toString("dd.MM.yyyy HH:mm") + " → " + QString::number(value, 'f', 2));
         }
     }
@@ -310,6 +441,15 @@ void MainWindow::parseMeasurementData(const QByteArray &data) {
     performDataAnalysis(values);
 }
 
+/**
+ * @brief Wykonuje analizę danych pomiarowych (maksimum, minimum, średnia, trend).
+ *
+ * Funkcja przetwarza dane pomiarowe, oblicza minimalną, maksymalną wartość,
+ * średnią oraz wykrywa trend w danych (wzrostowy/spadkowy). Wyniki są
+ * wyświetlane w interfejsie użytkownika.
+ *
+ * @param valuesArray Tablica wartości pomiarowych do analizy.
+ */
 void MainWindow::performDataAnalysis(const QJsonArray &valuesArray) { // Analiza danych (max, min, avg, trend)
     if (valuesArray.isEmpty()) {
         ui->dataAnalysisLineEdit->setText("Brak danych do analizy.");
