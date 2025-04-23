@@ -1,0 +1,9 @@
+# ninja log v6
+14	1004	7670675440557478	AirQualityMonitor_autogen/timestamp	4c5e392126c7c2dc
+14	1004	7670675440557478	AirQualityMonitor_autogen/mocs_compilation.cpp	4c5e392126c7c2dc
+14	1004	7670675440557478	C:/Users/mtlc2/Documents/AirQualityMonitor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/AirQualityMonitor_autogen/timestamp	4c5e392126c7c2dc
+14	1004	7670675440557478	C:/Users/mtlc2/Documents/AirQualityMonitor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/AirQualityMonitor_autogen/mocs_compilation.cpp	4c5e392126c7c2dc
+1011	3533	7670675441514915	CMakeFiles/AirQualityMonitor.dir/AirQualityMonitor_autogen/mocs_compilation.cpp.obj	8bdbb7e5e33987d8
+1015	3589	7670675441544872	CMakeFiles/AirQualityMonitor.dir/main.cpp.obj	79a8bd1342cd9561
+1019	4798	7670675441584711	CMakeFiles/AirQualityMonitor.dir/mainwindow.cpp.obj	2ec4c6e182635569
+4799	4992	7670675479395524	AirQualityMonitor.exe	358a3b7feed97b80

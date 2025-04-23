@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-17e802279708c798386c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AirQualityMonitor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AirQualityMonitor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AirQualityMonitor-Release-40e02888e9568ccefc7d.json",
+					"name" : "AirQualityMonitor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AirQualityMonitor_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AirQualityMonitor_autogen-Release-2a8ce9936dcc2c232ce7.json",
+					"name" : "AirQualityMonitor_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AirQualityMonitor_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AirQualityMonitor_autogen_timestamp_deps-Release-a3d03615fe2933db562b.json",
+					"name" : "AirQualityMonitor_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/mtlc2/Documents/AirQualityMonitor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release",
+		"source" : "C:/Users/mtlc2/Documents/AirQualityMonitor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
